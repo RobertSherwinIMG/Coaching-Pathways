@@ -107,3 +107,59 @@ dialog::backdrop{background:rgba(11,42,75,.4)}
  @page{margin:12mm}
 }
 @media print{#dbStatus,#saveMsg{display:none}}
+
+/* Dashboard */
+.dashbtn{position:absolute;top:20px;right:76px;height:44px;padding:0 20px}
+.dashbtn:hover{background:var(--soft)}
+body.dashon main>*:not(h1):not(#dash){display:none}
+.dtop{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-bottom:14px}
+.dtabs{display:flex;gap:8px}.dact2{display:flex;gap:8px}
+.dtabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+#dash .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:16px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.tl{font-size:14px;color:var(--muted);font-weight:500;min-height:24px;display:flex;align-items:center}
+.tv{font-size:40px;font-weight:700;line-height:1.1;margin-top:4px}
+.ts{font-size:13px;color:var(--muted);margin-top:2px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px;min-width:0}
+.card.wide{grid-column:1/-1;margin-bottom:16px}
+.cards+.card.wide,.kpis+.card.wide{margin-top:0}
+.card h3{margin:0 0 4px;font-size:18px;font-weight:600}
+.card .note{margin:0 0 14px;font-size:14px}
+.chart{width:100%;height:auto;display:block}
+.chart .gl{stroke:var(--line);stroke-width:1}.chart .bl{stroke:#B7C3D0;stroke-width:1}
+.chart .rf{stroke:var(--ink);stroke-width:1;stroke-dasharray:4 4}
+.chart .ax{fill:var(--muted);font-size:12px}.chart .vl{fill:var(--ink);font-size:13px;font-weight:600}.chart .vi{font-size:12px;font-weight:600}
+.chart .mk{stroke:var(--surface);stroke-width:2}
+.chart .mk:hover,.donut .mk2:hover{opacity:.82}
+.dwrap{display:flex;flex-wrap:wrap;align-items:center;gap:18px}.donut{width:170px;height:170px;flex:none}
+.donut .dn{fill:var(--ink);font-size:28px;font-weight:700}.donut .ax{fill:var(--muted);font-size:12px}
+.leg{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 18px}
+.dwrap .leg{flex-direction:column;margin:0}
+.leg li{display:flex;align-items:center;gap:8px;font-size:14px}
+.leg .sw{width:20px;height:20px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.leg .lv{color:var(--muted)}
+.hb{display:flex;flex-direction:column;gap:12px}
+.hr{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"l v" "t t";gap:4px 12px}
+.hl{grid-area:l;font-size:14px}.hv{grid-area:v;font-size:14px;color:var(--muted);white-space:nowrap}.ht{grid-area:t;height:10px;background:var(--soft);border-radius:5px}
+.hf{height:10px;border-radius:5px}
+.bd{display:inline-flex;align-items:center;gap:7px;font-weight:500;white-space:nowrap}
+.bd i{width:20px;height:20px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:12px;font-weight:700}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.dt{border-collapse:collapse;width:100%;font-size:14px}
+.dt th,.dt td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+.dt tbody tr:last-child td{border-bottom:0}
+.dt thead th{background:var(--soft);padding:0;position:sticky;top:0}
+.sortb{all:unset;cursor:pointer;display:block;padding:10px 14px;font-weight:600;font-size:13px;color:var(--ink)}
+.sortb:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.dt tr.clk{cursor:pointer}.dt tr.clk:hover td,.dt tr.open td{background:var(--field)}
+.dt .drow td{white-space:normal;background:var(--field);padding:16px 20px}
+.gaps h4{margin:0 0 10px;font-size:15px}
+.gap{padding:10px 0;border-top:1px solid var(--line)}
+.gh{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted)}
+.gr{font-weight:600;color:var(--ink)}.gq{font-weight:500;margin:4px 0 2px}.ge{font-size:14px;color:var(--ink)}.ge.none{color:var(--muted);font-style:italic}
+.tsel{max-width:260px;margin-bottom:14px}
+.dtip{position:fixed;z-index:50;pointer-events:none;background:var(--ink);color:#fff;font-size:13px;padding:6px 10px;border-radius:8px;max-width:320px}
+.dtip[hidden]{display:none}
+@media (max-width:760px){#dash .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.cards{grid-template-columns:1fr}.dashbtn{right:76px;padding:0 14px}}
+@media print{.dashbtn,.dtop{display:none}}

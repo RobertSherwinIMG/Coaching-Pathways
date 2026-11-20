@@ -174,4 +174,5 @@
       boot();setStatus('Connected to the database.');
     }).catch(function(){setStatus('Could not reach the database. Coaches and assessors cannot be loaded or saved right now.')});
   }else setStatus('Not connected to the database. Coaches and assessors are saved in this browser only.');
+  window.PATHWAY_APP={api:api,DB:DB,META:META};
 })();
