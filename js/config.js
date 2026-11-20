@@ -1,7 +1,6 @@
 // Backend settings for the Coaching Pathway form.
-// Fill in the two values below on your own computer. Do not share this file or commit it to GitHub.
-// Use only the PUBLIC (publishable / anon) key. Never put the secret or service_role key here.
+// Replace the two values below. Use only the PUBLIC (publishable) key. Never put the secret or service_role key here.
 window.PATHWAY_CONFIG = {
-  supabaseUrl: "PASTE_YOUR_PROJECT_URL_HERE",       // e.g. https://xxxxxxxx.supabase.co
-  supabaseKey: "PASTE_YOUR_PUBLISHABLE_KEY_HERE"
+  supabaseUrl: "https://dnjqtbnjpdpvydkbjxja.supabase.co",
+  supabaseKey: "sb_publishable_53E9xFSAwZtVkmoyldXY_A_SCAX6MVq"
 };
